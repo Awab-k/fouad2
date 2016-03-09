@@ -1,0 +1,50 @@
+
+
+
+<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+            <h1>Smart exams</h1>
+    </md-toolbar>
+
+     <md-content flex layout="row"  id="content" ui-view layout-align="center center" layout-fill>
+       <form name="loginform" novalidate  class="md-whiteframe-8dp" flex-xs="90" flex-sm="90"  flex-gt-sm="45"  layout="column"  layout-align="center center">
+  <span>
+  <div class='md-padding' > 
+<img src="../../assets/images/user.png"  class="md-whiteframe-8dp img_avatar" > 
+</div>
+  </span>
+<span>
+    <md-input-container class="md-icon-float md-block" layout="row">
+      <label>User name</label>
+      <md-icon  class="fa fa-user fa-2x"></md-icon>
+      <input ng-model="username" type="text" ng-init="username ='' " ng-required="true">
+    </md-input-container>
+
+</span>
+
+ 
+    <md-input-container class="md-icon-float md-block">
+      <label>Password</label>
+      <md-icon  class="fa fa-unlock-alt fa-2x"></md-icon>
+      <input ng-model="password" type="text" ng-required="true" ng-init="password ='' ">
+    </md-input-container>
+
+<md-button class="md-raised md-primary" ng-click="login( username , password)">  
+Log in 
+ <md-icon class="fa fa-sign-in fa-2x"  ></md-icon>
+</md-button>
+        
+
+
+
+<md-content  class=" md-whiteframe-5dp md-primary" ng-show="wrongPass" flex layout-padding> 
+<p style="color: red;">
+{{wrongPass}}
+</p>
+</md-content>
+
+
+</form>
+      </md-content>
+</div>

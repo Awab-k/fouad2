@@ -1,0 +1,97 @@
+
+
+<div class="" flex layout="row">
+
+	<div class="md-whiteframe-2dp" flex hide-sm hide-xs flex-gt-sm="15" style="" >
+
+		<md-toolbar>
+	<div class="md-toolbar-tools">
+	<h3>
+		<span>Questions</span>
+	</h3>
+	</div>
+</md-toolbar>
+
+		<md-list layout-padding>
+		<md-list-item class="md-clickable" ng-repeat="num in nums" flex layout layout-align="center center" style="padding: 0px !important;">
+		 <md-button class="md-fab md-mini md-primary" aria-label="question num" style="text-align: center;" >
+         {{num}}
+        </md-button>
+		
+	</md-list-item>
+</md-list>
+</div>
+<!-- <md-list layout-padding>
+		<md-list-item class=" md-whiteframe-2dp rounded md-clickable" ng-repeat="num in nums" >
+		<p layout-align="center center" style="text-align: center;" flex  >
+{{num}}
+	</p>
+	</md-list-item>
+</md-list> -->
+
+<div class="md-whiteframe-2dp" flex flex-sm="100"  flex-gt-sm="80" style="" >
+	<md-toolbar>
+	<div class="md-toolbar-tools">
+		<md-button class="md-icon-button" aria-label="Prev">
+		<md-icon  class="fa fa-arrow-circle-left fa-2x " ></md-icon>
+	</md-button>
+	<span flex></span>
+	<h2>
+		<span>question number</span>
+	</h2>
+	<span flex></span>
+	<md-button class="md-icon-button" aria-label="Next">
+	<md-icon class="fa fa-arrow-circle-right fa-2x"></md-icon>
+</md-button>
+</div>
+</md-toolbar>
+<md-content flex  layout-align="center center" layout-padding>
+
+ <md-input-container class="md-block " >
+          <label>Question title</label>
+          <textarea ng-model="tempquestitle" disabled style="color: rgba(0,0,0,1); "></textarea> 
+        </md-input-container>
+<md-radio-group ng-model="data.group1">
+
+
+	<md-whiteframe class="md-whiteframe-3dp" flex layout layout-align="start center" layout-padding>
+	<span></span>
+		<md-radio-button value="one" class="md-primary">one</md-radio-button>
+	</md-whiteframe>
+
+
+	<md-whiteframe class="md-whiteframe-3dp" flex layout layout-align="start center" layout-padding>
+	<span></span>
+		<md-radio-button value="two" class="md-primary">two</md-radio-button>
+	</md-whiteframe>
+
+
+	<md-whiteframe class="md-whiteframe-3dp" flex layout layout-align="start center" layout-padding>
+	<span></span>
+		<md-radio-button value="three" class="md-primary"> three</md-radio-button>
+	</md-whiteframe>
+
+
+
+	<md-whiteframe class="md-whiteframe-3dp" flex layout layout-align="start center" layout-padding>
+	<span></span>
+		<md-radio-button value="four" class="md-primary"> four</md-radio-button>
+	</md-whiteframe>
+
+
+
+
+    </md-radio-group>
+<div flex layout="row" layout-align="center center">
+<md-button class="md-raised md-primary ">submit</md-button>
+</div>
+
+
+</md-content>
+
+</div>
+
+
+   
+
+</div>

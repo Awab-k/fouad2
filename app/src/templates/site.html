@@ -1,0 +1,100 @@
+
+
+
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')" flex>
+
+    <md-toolbar class="md-whiteframe-z1" >
+      <h1>Site Map</h1>
+    </md-toolbar>
+
+    <md-list flex >
+
+  <md-list-item class=" md-whiteframe-2dp">
+      <md-button  style="marigin-bottom: 0px;" ui-sref="login">
+      <div class="md-list-item-text" layout="row" layout-align="start center">
+        <md-icon class="crop" >
+        <i class="fa fa-lock  fa-3x" style="padding:10px;"></i>
+      </md-icon>
+     <div layout="row" layout-align="start center">
+        <h3 style="margin-right: 30px;"> Login </h3>  
+   
+      </div>
+    </div>
+  </md-button>
+</md-list-item>
+
+
+
+
+<md-list-item class=" md-whiteframe-2dp">
+      <md-button  style="marigin-bottom: 0px;" ui-sref="site.home">
+      <div class="md-list-item-text" layout="row" layout-align="start center">
+        <md-icon class="crop">
+        <i class="fa fa-sign-in  fa-3x" style="padding:10px;"></i>
+      </md-icon>
+     <div layout="row" layout-align="start center">
+        <h3 style="margin-right: 30px;"> home </h3>  
+   
+      </div>
+    </div>
+  </md-button>
+</md-list-item>
+
+
+
+
+<md-list-item class=" md-whiteframe-2dp">
+      <md-button  style="marigin-bottom: 0px;" ui-sref="site.quizzing">
+      <div class="md-list-item-text" layout="row" layout-align="start center">
+        <md-icon class="crop">
+        <i class="fa fa-sign-in  fa-3x" style="padding:10px;"></i>
+      </md-icon>
+     <div layout="row" layout-align="start center">
+        <h3 style="margin-right: 30px;"> quizzing </h3>  
+   
+      </div>
+    </div>
+  </md-button>
+</md-list-item>
+
+
+
+
+<md-list-item class=" md-whiteframe-2dp">
+      <md-button  style="marigin-bottom: 0px;" ui-sref="site.survey">
+      <div class="md-list-item-text" layout="row" layout-align="start center">
+        <md-icon class="crop" layout-align="center center">
+        <i class="fa fa-info  fa-3x" style="padding:10px;"></i>
+      </md-icon>
+     <div layout="row" layout-align="start center">
+        <h3 style="margin-right: 30px;"> survey </h3>  
+   
+      </div>
+    </div>
+  </md-button>
+</md-list-item>
+    </md-list>
+
+  </md-sidenav>
+
+  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+      <md-button class="menu" hide-gt-sm aria-label="Show User List" ng-click="toggleLeft()">
+
+
+        <md-icon class="fa fa-bars fa-2x" ></md-icon>
+      </md-button>
+      <h1>Smart exams</h1>
+    </md-toolbar>
+
+     <md-content flex layout="row"  id="content" ui-view layout-align="center center" layout-fill layout-padding>
+        <!-- your view goes here -->
+      </md-content>
+
+  </div>
+
+
+

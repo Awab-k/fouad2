@@ -1,0 +1,357 @@
+
+  <div layout="row" flex layout-fill ng-cloak style="overflow:hidden;" >
+     <div flex flex-gt-sm="20" layout="column" tabIndex="-1" layout-align="center center" style="overflow:hidden;">
+      <md-content   class="md-whiteframe-z2 " style="overflow:hidden;" >
+   
+
+
+
+
+
+
+<div class="myListItems" ng-show="buy">
+ <md-button class="md-raised md-primary">شراء منتج</md-button>
+</div>
+
+<div class="myListItems" ng-show="buyAviable">
+ <md-button class="md-raised md-primary">متوفر</md-button>
+</div>
+
+<div class="myListItems" ng-show="buyNotAviable">
+ <md-button class="md-raised md-primary">غير متوفر</md-button>
+</div>
+
+<div class="myListItems" ng-show="buySame">
+ <md-button class="md-raised md-primary">له مثيل</md-button>
+</div>
+
+<div class="myListItems" ng-show="buyNotSame">
+ <md-button class="md-raised md-primary">لا مثيل له</md-button>
+</div>
+
+<div class="myListItems" ng-show="rent">
+ <md-button class="md-raised md-primary">استئجار منتج</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="rentOwnership">
+ <md-button class="md-raised md-primary">مع تملك</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="rentNotOwnership">
+ <md-button class="md-raised md-primary">بدون تملك</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="investment">
+ <md-button class="md-raised md-primary">استثمار أموال</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="investmentParticipation">
+ <md-button class="md-raised md-primary">مع مشاركة</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="investmentOwn">
+ <md-button class="md-raised md-primary">مع تملك</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="investmentNotOwn">
+ <md-button class="md-raised md-primary">بدون تملك</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="investmentNotParticipation">
+ <md-button class="md-raised md-primary">بدون مشاركة</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="investmentSpecific">
+ <md-button class="md-raised md-primary">مجال محدد</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="investmentNotSpecific">
+ <md-button class="md-raised md-primary">مجال غير محدد</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="finance">
+ <md-button class="md-raised md-primary">تمويل أعمال</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="financeParticipation">
+ <md-button class="md-raised md-primary">مع مشاركة</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="financeOwn">
+ <md-button class="md-raised md-primary">مع تملك</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="financeNotOwn">
+ <md-button class="md-raised md-primary">بدون تملك</md-button>
+</div>
+
+
+<div class="myListItems" ng-show="financeNotParticipation">
+ <md-button class="md-raised md-primary">بدون مشاركة</md-button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <md-button class="md-raised md-mini md-warn" ng-click="restartAll()">إعادة المحاولة</md-button>
+  </md-content>
+  </div>
+
+  <div flex flex-gt-sm="80" layout="column"  layout-align="center center" tabIndex="-1" class="md-whiteframe-z2 md-primary">
+
+
+
+
+   <md-content class="MyContent-Animation" layout="column" ng-show="!(buy || rent || investment || finance)">
+     <p dir="rtl" style="padding:10px">
+      يرجى اختيار رغبتك ...
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setFinance()">تمويل أعمالك</md-button>
+     <md-button class="md-raised md-primary" ng-click="setInvestment()">استثمار أموالك</md-button>
+     <md-button class="md-raised md-primary" ng-click="setRent()">استئجار منتج</md-button>
+     <md-button class="md-raised md-primary" ng-click="setBuy()">شراء منتج</md-button>
+    </div>
+</md-content>
+
+
+ <md-content  class="MyContent-Animation"  layout="column" ng-show=" buy && !(buyAviable || buyNotAviable)">
+     <p dir="rtl" style="padding:10px">
+      هل المنتج متوفر أم غير متوفر (يتطلب عملا لوجوده) ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setbuyNotAviable()">المنتج غير متوفر</md-button>
+     <md-button class="md-raised md-primary" ng-click="setBuyAviable()">المنتج متوفر</md-button>
+    </div>
+  </md-content>
+
+
+<md-content  class="MyContent-Animation" layout="column" ng-show="buy && buyNotAviable && !(buySame || buyNotSame)">
+     <p dir="rtl" style="padding:10px">
+    هل للمنتج مثيل ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setBuyNotSame()">لا يوجد</md-button>
+     <md-button class="md-raised md-primary" ng-click="setBuySame()">له مثيل</md-button>
+    </div>
+  </md-content>
+
+
+<md-content  class="MyContent-Animation" layout="column" ng-show="rent && !(rentOwnership || rentNotOwnership)">
+     <p dir="rtl" style="padding:10px">
+  مع تملك ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setRentOwnership()">نعم</md-button>
+     <md-button class="md-raised md-primary" ng-click="setRentNotOwnership()">لا</md-button>
+    </div>
+  </md-content>
+
+<md-content  class="MyContent-Animation" layout="column" ng-show="investment && !(investmentParticipation || investmentNotParticipation)">
+     <p dir="rtl" style="padding:10px">
+  مع مشاركة في الإدارة ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setInvestmentNotParticipation()">بدون مشاركة</md-button>
+     <md-button class="md-raised md-primary" ng-click="setInvestmentParticipation()">مع مشاركة</md-button>
+    </div>
+  </md-content>
+
+
+<md-content  class="MyContent-Animation" layout="column" ng-show="investment && investmentNotParticipation && !( investmentSpecific || investmentNotSpecific )">
+     <p dir="rtl" style="padding:10px">
+ في مجال محدد ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setInvestmentNotSpecific()">لا</md-button>
+     <md-button class="md-raised md-primary" ng-click="setInvestmentSpecific()">نعم</md-button>
+    </div>
+  </md-content>
+
+
+
+<md-content  class="MyContent-Animation" layout="column" ng-show="investment && investmentParticipation && !(investmentOwn || investmentNotOwn )">
+     <p dir="rtl" style="padding:10px">
+ مع تملك ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setInvestmentNotOwn()">لا</md-button>
+     <md-button class="md-raised md-primary" ng-click="setInvestmentOwn()">نعم</md-button>
+    </div>
+  </md-content>
+
+
+
+
+<md-content  class="MyContent-Animation" layout="column" ng-show="finance && financeParticipation && !(financeOwn || financeNotOwn )">
+     <p dir="rtl" style="padding:10px">
+ مع تملك ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setFinanceNotOwn()">لا</md-button>
+     <md-button class="md-raised md-primary" ng-click="setFinanceOwn()">نعم</md-button>
+    </div>
+  </md-content>
+
+
+<md-content  class="MyContent-Animation" layout="column" ng-show="finance && !(financeParticipation || financeNotParticipation)">
+     <p dir="rtl" style="padding:10px">
+  مع مشاركة في الإدارة ؟
+      </p>
+    <div layout="row">
+     <md-button class="md-raised md-primary" ng-click="setFinanceNotParticipation()">بدون مشاركة</md-button>
+     <md-button class="md-raised md-primary" ng-click="setFinanceParticipation()">مع مشاركة</md-button>
+    </div>
+  </md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<md-content  layout="column" ng-show="buy && buyAviable ">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مرابحة 
+      </p>
+  </md-content>
+
+<md-content  layout="column" ng-show="buy && buyNotAviable && buySame">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي سلم 
+      </p>
+  </md-content>
+
+
+<md-content  layout="column" ng-show="buy && buyNotAviable && buyNotSame">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي استصناع 
+      </p>
+  </md-content>
+
+
+<md-content  layout="column" ng-show="rent && rentOwnership">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي إجارة منتهية بالتملك  
+      </p>
+  </md-content>
+
+<md-content  layout="column" ng-show="rent && rentNotOwnership">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي إجارة  
+      </p>
+  </md-content>
+
+<md-content  layout="column" ng-show="investment && investmentNotParticipation && investmentNotSpecific">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مضاربة مطلقة
+      </p>
+  </md-content>
+
+
+<md-content  layout="column" ng-show="investment && investmentNotParticipation && investmentSpecific">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مضاربة مقيدة
+      </p>
+  </md-content>
+
+
+<md-content  layout="column" ng-show="investment && investmentParticipation && investmentOwn">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مشاركة منتهية بالتمليك
+      </p>
+  </md-content>
+
+
+
+<md-content  layout="column" ng-show="investment && investmentParticipation && investmentNotOwn">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مشاركة 
+      </p>
+  </md-content>
+
+
+
+
+
+<md-content  layout="column" ng-show="finance && financeParticipation && financeOwn">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مشاركة منتهية بالتمليك
+      </p>
+  </md-content>
+
+
+
+<md-content  layout="column" ng-show="finance && financeParticipation && financeNotOwn">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مشاركة 
+      </p>
+  </md-content>
+
+
+<md-content  layout="column" ng-show="finance && financeNotParticipation ">
+     <p dir="rtl" style="padding:10px">
+    إن العملية التي تريدها هي مضاربة مقيدة
+      </p>
+  </md-content>
+
+
+
+
+
+
+  </div>
+
+
+
+  </div>

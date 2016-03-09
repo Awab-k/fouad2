@@ -1,0 +1,71 @@
+
+<div layout="column" flex layout-fill ng-cloak>
+  <md-toolbar md-scroll-shrink>
+  <div class="md-toolbar-tools">My Exams</div>
+</md-toolbar>
+<md-content style="height: 500px;" class="md-whiteframe-5dp" >
+
+
+<section>
+  <md-subheader class="md-primary" style="text-align: center;"> Current Exams</md-subheader>
+  <md-list layout-padding>
+  <md-list-item class=" md-whiteframe-2dp" ng-repeat="exam in currentExams">
+  <md-button ng-class="" style="marigin-bottom: 0px;">
+  <div class="md-list-item-text" layout="row" layout-align="start center">
+    <md-icon class="crop" >
+    <img ng-src="{{exam.imgPath}}" >
+    
+  </md-icon>
+
+  <div layout="row" layout-align="start center" flex layout-wrap>
+    <h3 style="margin-right: 30px;"> {{exam.title}}</h3>  
+    Class: {{exam.class}}   </br>     section: {{exam.section}}
+    <span style="margin-left: 20px; text-align: center;"   flex-xs="100" flex-sm="100" flex="noshrink">
+      {{exam.description}}
+    </span>
+
+    <span  layout="row" flex="noshrink" layout-align="end center">
+      <md-button class="md-icon-button md-primary" aria-label="inter exam" layout-align="end center" >
+      <md-icon class="fa fa-book fa-2x"></md-icon>
+    </md-button>
+  </span>
+
+</div>
+
+
+
+</div>
+</md-button>
+</md-list-item>
+</md-list>
+</section>
+
+
+<section>
+  <md-subheader class="md-warn" style="text-align: center;"> Old Exams</md-subheader>
+  <md-list layout-padding>
+  <md-list-item class=" md-whiteframe-2dp" ng-repeat="exam in oldExams">
+  <md-button ng-class="" style="marigin-bottom: 0px;">
+  <div class="md-list-item-text" layout="row" layout-align="start center">
+    <md-icon class="crop" >
+    <img ng-src="{{exam.imgPath}}" >
+
+  </md-icon>
+
+  <div layout="row" layout-align="start center" flex>
+    <h3 style="margin-right: 30px;"> {{exam.title}}</h3>  
+    Class: {{exam.class}}   </br>     section: {{exam.section}}
+    <span style="margin-left: 20px; text-align: center;"  flex>
+      {{exam.description}}
+    </span>
+  </div>
+  
+  
+
+</div>
+</md-button>
+</md-list-item>
+</md-list>
+</section>
+</md-content>
+</div>

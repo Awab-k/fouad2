@@ -1,0 +1,163 @@
+.myListItems {
+  position:relative;
+}
+
+.myListItems.ng-enter-stagger,
+.myListItems.ng-leave-stagger,
+.myListItems.ng-move-stagger,
+.myListItems.ng-hide-stagger,
+.myListItems.ng-hide-remove-stagger {
+  /* notice how we're using animation instead of transition here */ 
+  -webkit-animation-delay:0.5s;
+  animation-delay:0.5s;
+
+   /*yes we still need to do this too */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.myListItems.ng-move,
+.myListItems.ng-show,
+ .myListItems.ng-hide-remove {
+  /*opacity:0;*/
+  -webkit-animation:bounceInRight 0.8s;
+  animation:bounceInRight 0.8s;
+}
+
+.myListItems.ng-leave,
+.myListItems.ng-hide {
+  -webkit-animation:bounceOutLeft 0.8s;
+  animation:bounceOutLeft 0.8s;
+}
+/*
+@-webkit-keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}*/
+
+/*@-webkit-keyframes leave_animation {
+from { opacity:1; }
+  to { opacity:0; }
+}
+
+@keyframes leave_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}*/
+
+
+@-webkit-keyframes bounceOutLeft {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+  }
+}
+
+@keyframes bounceOutLeft {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+  }
+}
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+
+@-webkit-keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(200, 0, 0);
+    transform: translate3d(200, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+/*
+  75% {
+    -webkit-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+  }*/
+
+  /*90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+*/
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bounceInRight {
+  from,30%, 60%, /*75%,*/ /*90%,*/ to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+ from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000, 0, 0);
+    transform: translate3d(3000, 0, 0);
+  }
+
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+   60% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+/*
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }*/
+
+  /*90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+*/
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
